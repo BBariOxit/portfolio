@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Modern portfolio website with Tailwind CSS",
   "scripts": {
-  "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css"
+  "build": "tailwindcss -i ./src/input.css -o ./src/css/main.css"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3",
