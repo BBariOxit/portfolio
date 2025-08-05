@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Modern portfolio website with Tailwind CSS",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./src/css/style.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./src/css/style.css"
+  "dev": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css --watch",
+  "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3",
