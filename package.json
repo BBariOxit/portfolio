@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "Modern portfolio website with Tailwind CSS",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css"
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css --watch",
+    "start": "npx serve src"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "serve": "^14.2.1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "tailwind",
+    "vercel"
+  ],
+  "author": "Phan Bao",
   "license": "ISC"
 }
