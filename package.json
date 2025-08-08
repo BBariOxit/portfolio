@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Modern portfolio website with Tailwind CSS",
   "scripts": {
-  "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css"
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css"
   },
-  "Dependencies": {
-    "tailwindcss": "^3.4.17",
-    "postcss": "^8.4.28",
-    "autoprefixer": "^10.4.15"
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   },
   "keywords": [],
   "author": "",
