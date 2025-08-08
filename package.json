@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Modern portfolio website with Tailwind CSS",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css",
-    "dev": "npx tailwindcss -i ./src/input.css -o ./src/css/main.css --watch",
-    "start": "npx serve src"
+    "build": "tailwindcss -i ./src/input.css -o ./src/css/main.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./src/css/main.css --watch",
+    "start": "serve src"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
