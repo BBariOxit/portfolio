@@ -1,1 +1,6 @@
 .vercel
+Thêm quy tắc ignore cho tài liệu kỹ thuật
+docs/
+*.md
+*.pdf
+*.docx
