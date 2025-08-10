@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Modern portfolio website with Tailwind CSS",
   "scripts": {
-    "build": "chmod +x ./node_modules/.bin/tailwindcss && tailwindcss -i ./src/input.css -o ./src/css/main.css"
+    "build": "chmod +x ./node_modules/.bin/tailwindcss && tailwindcss -i ./src/input.css -o ./src/css/main.css",
     "dev": "tailwindcss -i ./src/input.css -o ./src/css/main.css --watch",
     "start": "serve src"
   },
