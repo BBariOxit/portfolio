@@ -210,7 +210,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
                 <div class="bg-gradient-to-br from-white via-primary-50/10 to-white dark:from-gray-800 dark:via-primary-900/10 dark:to-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                    <img src="./assets/images/1.jpg" 
                          alt="Project 1" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -230,7 +230,7 @@
 
                 <!-- Project Card 2 -->
                 <div class="bg-gradient-to-br from-white via-secondary/10 to-white dark:from-gray-800 dark:via-secondary/10 dark:to-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" 
+                    <img src="./assets/images/2.jpg" 
                          alt="Project 2" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -250,7 +250,7 @@
 
                 <!-- Project Card 3 -->
                 <div class="bg-gradient-to-br from-white via-accent/10 to-white dark:from-gray-800 dark:via-accent/10 dark:to-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                    <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546" 
+                    <img src="./assets/images/3.jpg" 
                          alt="Project 3" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -270,7 +270,7 @@
 
                 <!-- Project Card 4 -->
                 <div class="bg-gradient-to-br from-white via-primary/10 to-white dark:from-gray-800 dark:via-primary/10 dark:to-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                    <img src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44" 
+                    <img src="./assets/images/4.jpg" 
                          alt="Project 4" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -290,7 +290,7 @@
 
                 <!-- Project Card 5 -->
                 <div class="bg-gradient-to-br from-white via-secondary/10 to-white dark:from-gray-800 dark:via-secondary/10 dark:to-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" 
+                    <img src="./assets/images/5.jpg" 
                          alt="Project 5" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -310,7 +310,7 @@
 
                 <!-- Project Card 6 -->
                 <div class="bg-gradient-to-br from-white via-accent/10 to-white dark:from-gray-800 dark:via-accent/10 dark:to-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74" 
+                    <img src="./assets/images/6.jpg" 
                          alt="Project 6" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -399,10 +399,7 @@
                                         </div>
                                         <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors duration-300" 
                                             x-text="skills[(i-1)*skillsPerPage + j-1]?.name"></h3>
-                                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-4">
-                                            <div class="bg-primary-600 dark:bg-primary-400 h-2 rounded-full transition-all duration-500"
-                                                 :style="'width: ' + skills[(i-1)*skillsPerPage + j-1]?.level"></div>
-                                        </div>
+                                        <!-- Đã bỏ thanh tiến độ kỹ năng -->
                                     </div>
                                 </template>
                             </div>
