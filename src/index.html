@@ -712,7 +712,7 @@
                                 <template x-for="j in skillsPerPage" :key="j">
                                     <div x-show="(i-1)*skillsPerPage + j-1 < skills.length"
                                          class="group flex flex-col items-center p-8 bg-gradient-to-br from-white via-primary/5 to-white dark:from-gray-800 dark:via-primary/5 dark:to-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-300 dark:border-gray-700">
-                                        <div class="w-20 h-20 rounded-xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-md">
+                                        <div class="w-20 h-20 rounded-xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-md border-2 border-gray-200 dark:border-gray-600">
                                             <img :src="skills[(i-1)*skillsPerPage + j-1]?.icon" 
                                                  :alt="skills[(i-1)*skillsPerPage + j-1]?.name"
                                                  class="w-12 h-12">
