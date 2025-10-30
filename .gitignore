@@ -1,6 +1,15 @@
 .vercel
-Thêm quy tắc ignore cho tài liệu kỹ thuật
+# Thêm quy tắc ignore cho tài liệu kỹ thuật
 docs/
-*.md
+# Đừng ignore toàn bộ Markdown để README.md vẫn được commit
+# Nếu cần, thêm rule cụ thể hơn thay vì *.md
+# *.pdf và *.docx vẫn ignore để tránh commit tài liệu nặng
 *.pdf
 *.docx
+ 
+# Node & môi trường
+node_modules/
+npm-debug.log*
+.env
+.env.*
+.DS_Store
