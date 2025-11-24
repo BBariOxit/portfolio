@@ -21,6 +21,7 @@
 - [Cấu trúc thư mục](#cấu-trúc-thư-mục)
 - [Bắt đầu nhanh (Windows/PowerShell)](#bắt-đầu-nhanh-windowspowershell)
 - [Triển khai lên Vercel](#triển-khai-lên-vercel)
+- [Cấu hình form liên hệ](#cấu-hình-form-liên-hệ)
 - [Cấu hình domain cobwebidvn](#cấu-hình-domain-cobwebidvn)
 - [Ảnh minh họa](#ảnh-minh-họa)
 - [Ghi chú phát triển](#ghi-chú-phát-triển)
@@ -31,6 +32,7 @@
 ## Tính năng nổi bật
 
 - UI hiện đại với Tailwind 3.x, tùy biến theme, dark mode (class-based)
+- **Contact Form hoạt động**: gửi email trực tiếp về Gmail qua Vercel Serverless Functions + Nodemailer
 - Performance tốt cho static site; có sitemap.xml và robots.txt
 - Trang Blog mẫu: `src/blog.html`
 - Cấu hình bảo mật headers cơ bản qua `vercel.json`
@@ -40,12 +42,16 @@
 
 - HTML, CSS (Tailwind via PostCSS + Autoprefixer)
 - JavaScript (vanilla)
+- Vercel Serverless Functions (API backend)
+- Nodemailer (gửi email)
 - Vercel (static hosting)
 
 ## Cấu trúc thư mục
 
 ```
 portfolio/
+├─ api/
+│  └─ contact.js            # Vercel Serverless Function (gửi email)
 ├─ src/
 │  ├─ index.html            # Trang chính
 │  ├─ blog.html             # Trang blog (demo)
@@ -123,8 +129,35 @@ npx vercel --prod
 Vercel đã cấu hình sẵn qua `vercel.json`:
 
 - outputDirectory: `src` (deploy nguyên thư mục src)
-- rewrites: trỏ mọi đường dẫn về `index.html`
+- rewrites: trỏ mọi đường dẫn (trừ `/api/*`) về `index.html` để hỗ trợ SPA routing
 - security headers: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
+
+## Cấu hình form liên hệ
+
+Form ở cuối trang sẽ gọi API `POST /api/contact` (file `api/contact.js`) và gửi email qua SMTP Gmail. Để chạy được, bạn cần cấu hình biến môi trường:
+
+| Biến               | Mô tả                                                                                              |
+| ------------------ | -------------------------------------------------------------------------------------------------- |
+| `GMAIL_USER`       | Tài khoản Gmail dùng để gửi mail (ví dụ `phanbao2648@gmail.com`)                                   |
+| `GMAIL_PASS`       | App Password 16 ký tự của Gmail (bắt buộc bật 2FA, vào `myaccount.google.com/apppasswords` để tạo) |
+| `CONTACT_TO_EMAIL` | Email nhận thông báo. Mặc định = `GMAIL_USER`, nhưng bạn có thể nhập email khác.                   |
+
+> Gmail hiện bắt buộc dùng App Password (không dùng mật khẩu thường). Sau khi tạo App Password, lưu lại và set vào project Vercel: Project Settings → Environment Variables. Nhớ trigger redeploy sau khi cập nhật.
+
+Test local:
+
+1. Chạy `npm install` (đã có `nodemailer`).
+2. Set biến môi trường trong PowerShell:
+
+```powershell
+$env:GMAIL_USER="you@gmail.com"
+$env:GMAIL_PASS="app-password-16-chu"
+$env:CONTACT_TO_EMAIL="phanbao2648@gmail.com"
+```
+
+3. Dùng `vercel dev` hoặc một HTTP proxy hỗ trợ serverless để chạy API (vì `npm start` chỉ serve static). Khi build & deploy lên Vercel, API sẽ hoạt động ngay.
+
+**Xem hướng dẫn chi tiết tại:** [`SETUP_EMAIL.md`](./SETUP_EMAIL.md)
 
 ## Cấu hình domain cobweb.id.vn
 
@@ -163,7 +196,6 @@ Mọi góp ý/PR đều được chào đón. Vui lòng tạo issue trước khi
 - Tác giả: Phan Thái Bảo
 - Email: phanbao2648@gmail.com
 - GitHub: https://github.com/BBariOxit
-- LinkedIn: https://www.linkedin.com/in/thái-bảo-phan-854a00340/
 
 ## Bản quyền
 
